@@ -80,7 +80,7 @@ export function App() {
     try {
       await salesRepo.placeSale(cart.items.map(i => ({ productId: i.product.id, quantity: i.quantity })));
       setCart(new Cart());
-      setMessage({ text: 'Â¡Venta registrada con Ã©xito!', type: 'success' });
+      setMessage({ text: '¡Venta registrada con éxito!', type: 'success' });
       loadCatalog();
       setView('catalog');
     } catch (err: any) {
@@ -111,7 +111,7 @@ export function App() {
       <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center' }}>
         <form onSubmit={handleLogin} style={{ background: '#fff', padding: 32, borderRadius: 8, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', width: 360 }}>
           <h2 style={{ marginBottom: 8, fontSize: 22, fontWeight: 700 }}>Simple Stock Flow</h2>
-          <p style={{ color: 'var(--text-muted)', marginBottom: 24, fontSize: 14 }}>Inicia sesiÃ³n para operar el sistema</p>
+          <p style={{ color: 'var(--text-muted)', marginBottom: 24, fontSize: 14 }}>Inicia sesión para operar el sistema</p>
 
           {authError && (
             <div style={{ background: '#fee2e2', color: '#991b1b', padding: 12, borderRadius: 6, marginBottom: 16, fontSize: 14 }}>
@@ -131,7 +131,7 @@ export function App() {
           </div>
 
           <div style={{ marginBottom: 24 }}>
-            <label style={{ display: 'block', fontSize: 14, fontWeight: 500, marginBottom: 6 }}>ContraseÃ±a</label>
+            <label style={{ display: 'block', fontSize: 14, fontWeight: 500, marginBottom: 6 }}>Contraseña</label>
             <input
               type="password"
               value={password}
@@ -151,13 +151,13 @@ export function App() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Barra de navegaciÃ³n */}
+      {/* Barra de navegación */}
       <header style={{ background: '#fff', borderBottom: '1px solid var(--border)', padding: '12px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
           <h1 style={{ fontSize: 18, fontWeight: 700, color: 'var(--primary)' }}>Simple Stock Flow</h1>
           <nav style={{ display: 'flex', gap: 12 }}>
             <button onClick={() => setView('catalog')} style={{ background: view === 'catalog' ? '#eff6ff' : 'none', color: view === 'catalog' ? 'var(--primary)' : 'inherit', border: 'none', padding: '6px 12px', borderRadius: 6, cursor: 'pointer', fontWeight: 500 }}>
-              CatÃ¡logo
+              Catálogo
             </button>
             <button onClick={() => setView('cart')} style={{ background: view === 'cart' ? '#eff6ff' : 'none', color: view === 'cart' ? 'var(--primary)' : 'inherit', border: 'none', padding: '6px 12px', borderRadius: 6, cursor: 'pointer', fontWeight: 500 }}>
               Carrito ({cart.items.reduce((s, i) => s + i.quantity, 0)})
@@ -181,14 +181,14 @@ export function App() {
         </div>
       </header>
 
-      {/* Mensajes de notificaciÃ³n */}
+      {/* Mensajes de notificación */}
       {message && (
         <div style={{ background: message.type === 'success' ? '#dcfce7' : '#fee2e2', color: message.type === 'success' ? '#166534' : '#991b1b', padding: '12px 24px', textAlign: 'center', fontSize: 14, fontWeight: 500 }}>
           {message.text}
         </div>
       )}
 
-      {/* Contenido segÃºn vista */}
+      {/* Contenido según vista */}
       <main style={{ padding: 24, maxWidth: 1200, margin: '0 auto', width: '100%', flex: 1 }}>
         {view === 'catalog' && (
           <div>
@@ -205,7 +205,7 @@ export function App() {
                 onChange={e => setSelectedCat(e.target.value)}
                 style={{ padding: '8px 12px', border: '1px solid var(--border)', borderRadius: 6 }}
               >
-                <option value="">Todas las CategorÃ­as</option>
+                <option value="">Todas las Categorías</option>
                 {categories.map(c => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
@@ -243,7 +243,7 @@ export function App() {
           <div style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 8, padding: 24 }}>
             <h2 style={{ fontSize: 20, marginBottom: 16 }}>Carrito de Venta</h2>
             {cart.items.length === 0 ? (
-              <p style={{ color: 'var(--text-muted)' }}>El carrito estÃ¡ vacÃ­o.</p>
+              <p style={{ color: 'var(--text-muted)' }}>El carrito está vacío.</p>
             ) : (
               <div>
                 <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 24 }}>
@@ -295,7 +295,7 @@ export function App() {
                     <th style={{ padding: 8 }}>ID Venta</th>
                     <th style={{ padding: 8 }}>Vendedor</th>
                     <th style={{ padding: 8 }}>Fecha y Hora</th>
-                    <th style={{ padding: 8 }}>LÃ­neas</th>
+                    <th style={{ padding: 8 }}>Líneas</th>
                     <th style={{ padding: 8 }}>Total</th>
                   </tr>
                 </thead>

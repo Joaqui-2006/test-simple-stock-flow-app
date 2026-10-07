@@ -19,17 +19,17 @@ export class HttpClient {
 
     if (!res.ok) {
       if (res.status === 401) {
-        throw new Error('SesiÃ³n expirada o no autorizada');
+        throw new Error('Sesión expirada o no autorizada');
       }
       if (res.status === 403) {
-        throw new Error('No tienes permisos suficientes para realizar esta acciÃ³n');
+        throw new Error('No tienes permisos suficientes para realizar esta acción');
       }
 
       try {
         const errorData = await res.json();
-        throw new Error(errorData.detail || 'OcurriÃ³ un error en la solicitud');
+        throw new Error(errorData.detail || 'Ocurrió un error en la solicitud');
       } catch (err: any) {
-        throw new Error(err.message || 'Error en la comunicaciÃ³n con el servidor');
+        throw new Error(err.message || 'Error en la comunicación con el servidor');
       }
     }
 
