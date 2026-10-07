@@ -1,4 +1,4 @@
-﻿# test-simple-stock-flow-app
+# test-simple-stock-flow-app
 
 > **Prueba tÃ©cnica Â· Ficha ADSO 3413974**  
 > Frontend en React (TypeScript + Vite) implementado bajo Arquitectura Onion.
