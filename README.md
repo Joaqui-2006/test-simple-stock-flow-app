@@ -1,45 +1,34 @@
-# test-simple-stock-flow-app
+﻿# test-simple-stock-flow-app
 
-> **Prueba técnica · Ficha ADSO 3413974**
-> Horario: de **9:00 a. m. a 3:00 p. m.** (15:00)
+> **Prueba tÃ©cnica Â· Ficha ADSO 3413974**  
+> Frontend en React (TypeScript + Vite) implementado bajo Arquitectura Onion.
 
-Este repositorio es el **frontend** de *Simple Stock Flow*, en **React**. **Empieza vacío a propósito**: se construye en el fork de cada aprendiz.
+---
 
-## Instrucciones
+### 1. QuÃ© es esto
+Es la interfaz web de usuario de *Simple Stock Flow*. Permite al personal del almacÃ©n (administradores y vendedores) explorar el catÃ¡logo con filtrado sin distinciÃ³n de mayÃºsculas ni acentos, gestionar el carrito de compra en memoria, realizar ventas con descuento atÃ³mico y consultar reportes y ventas histÃ³ricas. **No se ocupa** de reglas de persistencia ni del cÃ¡lculo directo de base de datos.
 
-Cada aprendiz debe **crear el fork** de los seis repositorios del proyecto y **resolver el proyecto
-con el spec planteado**.
+### 2. CÃ³mo se levanta
+El frontend se sirve compilado dentro de un contenedor Nginx con proxy inverso hacia la API. Desde la carpeta hermana `test-simple-stock-flow-infra`:
+```bash
+docker compose up -d app
+```
+La aplicaciÃ³n web estarÃ¡ disponible de inmediato en `http://localhost:8080`.
 
-1. Hacer fork, a su cuenta de GitHub, de cada repositorio de la tabla del final.
-2. Leer el spec en [`test-simple-stock-flow-docs`](https://github.com/code-sena/test-simple-stock-flow-docs).
-   Se entrega en dos versiones: `spec-python/` y `spec-.net/`.
-3. Desarrollar en los forks.
+Para desarrollo local directo con Node:
+```bash
+npm install
+npm run dev
+```
 
-## El reto se desarrolla con React y PHP (Laravel)
+### 3. DÃ³nde estÃ¡n los datos
+La aplicaciÃ³n React es un cliente HTTP sin estado propio de base de datos. Consume todos sus datos a travÃ©s de la API REST (`http://localhost:8000` o `/api` mediante el proxy inverso Nginx).
 
-El spec está escrito para Python y para .NET, pero el reto **no** se hace en esos lenguajes:
+### 4. CÃ³mo se prueba
+Para compilar y verificar tipos de TypeScript:
+```bash
+npm run build
+```
 
-| Capa | Tecnología del reto |
-|---|---|
-| Frontend | React |
-| Backend | PHP con Laravel |
-
-Lo que el spec define sobre el negocio —historias, criterios de aceptación, reglas, contrato de la
-API, modelo de datos— se respeta. Lo que define sobre la tecnología se traduce a React y Laravel.
-
-## La prueba no consiste en escribir el código
-
-El propósito principal es ver la **capacidad de desempeño con SDD** (*Spec-Driven Development*,
-desarrollo guiado por especificación): cómo se lee, se interpreta y se aplica una especificación
-para llevarla a un stack distinto. El código es el medio, no el fin.
-
-## Los seis repositorios
-
-| Repositorio | Qué va ahí |
-|---|---|
-| [`test-simple-stock-flow-docs`](https://github.com/code-sena/test-simple-stock-flow-docs) | El spec: `spec-python/` y `spec-.net/` |
-| [`test-simple-stock-flow-api`](https://github.com/code-sena/test-simple-stock-flow-api) | Backend en PHP (Laravel) |
-| [`test-simple-stock-flow-app`](https://github.com/code-sena/test-simple-stock-flow-app) | Frontend en React |
-| [`test-simple-stock-flow-page`](https://github.com/code-sena/test-simple-stock-flow-page) | Sitio público estático de presentación |
-| [`test-simple-stock-flow-infra`](https://github.com/code-sena/test-simple-stock-flow-infra) | Contenedores, red, volúmenes y motor de base de datos vacío |
-| [`test-simple-stock-flow-tool`](https://github.com/code-sena/test-simple-stock-flow-tool) | Utilidades: sembrador de datos de demostración |
+### 5. QuÃ© falta
+Toda la interacciÃ³n descrita en las historias de usuario HU-01 a HU-08 para vendedores y administradores estÃ¡ completamente desarrollada y conectada al contrato de la API.
