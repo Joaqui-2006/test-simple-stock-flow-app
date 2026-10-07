@@ -1,4 +1,4 @@
-﻿import { IProductRepository } from '../application/ports/IProductRepository';
+import { IProductRepository } from '../application/ports/IProductRepository';
 import { ISalesRepository } from '../application/ports/ISalesRepository';
 import { ISessionRepository, UserSession } from '../application/ports/ISessionRepository';
 import { ApiAuthResponse, ApiPagedResult, ApiProductDto } from './http/dto/api.dto';

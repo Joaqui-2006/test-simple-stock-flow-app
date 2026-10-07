@@ -1,4 +1,4 @@
-﻿import { Product } from '../../domain/model/Product';
+import { Product } from '../../domain/model/Product';
 
 export interface IProductRepository {
   list(search?: string, categoryId?: string, page?: number): Promise<{ items: Product[]; total: number; totalPages: number }>;

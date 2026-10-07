@@ -1,4 +1,4 @@
-﻿import { Money } from './Money';
+import { Money } from './Money';
 
 export interface Product {
   id: string;

@@ -1,4 +1,4 @@
-﻿export interface ApiProductDto {
+export interface ApiProductDto {
   id: string;
   name: string;
   price: number;

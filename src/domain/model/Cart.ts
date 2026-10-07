@@ -1,4 +1,4 @@
-﻿import { Money } from './Money';
+import { Money } from './Money';
 import { Product } from './Product';
 
 export interface CartItem {

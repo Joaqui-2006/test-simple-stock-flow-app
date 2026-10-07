@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Product } from './domain/model/Product';
 import { Cart } from './domain/model/Cart';
 import { UserSession } from './application/ports/ISessionRepository';

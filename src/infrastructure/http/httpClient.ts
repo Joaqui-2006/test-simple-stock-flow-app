@@ -1,4 +1,4 @@
-﻿export class HttpClient {
+export class HttpClient {
   constructor(private readonly getAuthToken: () => string | null) {}
 
   async request<T>(path: string, options: RequestInit = {}): Promise<T> {

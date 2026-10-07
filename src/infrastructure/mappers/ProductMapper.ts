@@ -1,4 +1,4 @@
-﻿import { Money } from '../../domain/model/Money';
+import { Money } from '../../domain/model/Money';
 import { Product } from '../../domain/model/Product';
 import { ApiProductDto } from '../http/dto/api.dto';
 

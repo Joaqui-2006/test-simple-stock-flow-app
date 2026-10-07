@@ -1,4 +1,4 @@
-﻿export class Money {
+export class Money {
   constructor(public readonly amount: number, public readonly currency: string = 'COP') {
     if (amount < 0) {
       throw new Error('El importe monetario no puede ser negativo');

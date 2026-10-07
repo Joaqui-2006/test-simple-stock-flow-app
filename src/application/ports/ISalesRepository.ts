@@ -1,4 +1,4 @@
-﻿export interface SaleSummary {
+export interface SaleSummary {
   id: string;
   sellerUsername: string;
   createdAt: string;

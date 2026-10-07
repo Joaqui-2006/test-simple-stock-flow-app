@@ -1,4 +1,4 @@
-﻿export interface UserSession {
+export interface UserSession {
   token: string;
   userId: string;
   username: string;
