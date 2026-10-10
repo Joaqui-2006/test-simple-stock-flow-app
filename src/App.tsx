@@ -477,40 +477,45 @@ export function App() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
               <button
                 type="button"
-                onClick={() => fillQuickAuth('admin', 'admin1234')}
+                onClick={() => fillQuickAuth('admin', 'Admin12345!')}
                 style={{
-                  padding: '8px 12px',
+                  padding: '10px 12px',
                   background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: 8,
+                  border: '1.5px solid #c7d2fe',
+                  borderRadius: 10,
                   fontSize: 12,
                   fontWeight: 600,
                   color: '#4338ca',
                   cursor: 'pointer',
-                  textAlign: 'left'
+                  textAlign: 'left',
+                  transition: 'all 0.15s'
                 }}
               >
                 👑 <strong>Admin Demo</strong><br />
-                <span style={{ color: '#94a3b8', fontSize: 11 }}>admin / admin1234</span>
+                <span style={{ color: '#6366f1', fontSize: 11, fontFamily: 'monospace' }}>admin / Admin12345!</span>
               </button>
               <button
                 type="button"
-                onClick={() => fillQuickAuth('vendedor1', 'seller1234')}
+                onClick={() => fillQuickAuth('vendedor1', 'Seller12345!')}
                 style={{
-                  padding: '8px 12px',
+                  padding: '10px 12px',
                   background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: 8,
+                  border: '1.5px solid #99f6e4',
+                  borderRadius: 10,
                   fontSize: 12,
                   fontWeight: 600,
                   color: '#0f766e',
                   cursor: 'pointer',
-                  textAlign: 'left'
+                  textAlign: 'left',
+                  transition: 'all 0.15s'
                 }}
               >
                 🛒 <strong>Vendedor Demo</strong><br />
-                <span style={{ color: '#94a3b8', fontSize: 11 }}>vendedor1 / seller1234</span>
+                <span style={{ color: '#0d9488', fontSize: 11, fontFamily: 'monospace' }}>vendedor1 / Seller12345!</span>
               </button>
+            </div>
+            <div style={{ marginTop: 8, fontSize: 11, color: '#94a3b8', textAlign: 'center' }}>
+              * También se aceptan <code>admin1234</code> y <code>seller1234</code>.
             </div>
           </div>
         </div>
