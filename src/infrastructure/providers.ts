@@ -120,3 +120,10 @@ export async function apiLogin(username: string, password: string):Promise<UserS
   sessionRepo.setSession(session);
   return session;
 }
+
+export async function apiRegisterSeller(username: string, password: string): Promise<{ id: string; username: string; role: string }> {
+  return httpClient.request<{ id: string; username: string; role: string }>('/api/auth/register', {
+    method: 'POST',
+    body: JSON.stringify({ username, password }),
+  });
+}
